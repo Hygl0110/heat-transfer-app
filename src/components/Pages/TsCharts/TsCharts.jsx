@@ -38,7 +38,9 @@ export const TsCharts = () => {
           {
             label: "Surface temperature",
             data: yValues,
+            borderColor: "rgba(75, 192, 192, 1)",
             backgroundColor: "rgba(75, 192, 192, 1)",
+            pointRadius: 8,
           },
         ],
       });
@@ -65,7 +67,9 @@ export const TsCharts = () => {
           {
             label: "Surface temperature",
             data: yValues,
+            borderColor: "rgba(75, 192, 192, 1)",
             backgroundColor: "rgba(75, 192, 192, 1)",
+            pointRadius: 8,
           },
         ],
       });

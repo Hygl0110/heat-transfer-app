@@ -1,3 +1,4 @@
+import "./QconvQrad.css";
 import React, { useEffect, useState } from "react";
 import { QconvQradForm } from "../../Molecules/QconvQradForm/QconvQradForm";
 import { LineChart } from "../../Atoms/LineChart/LineChart";
@@ -56,12 +57,16 @@ export const QconvQrad = () => {
           {
             label: "Qconv",
             data: hQconvValues,
+            borderColor: "rgba(75, 192, 0, 1)",
             backgroundColor: "rgba(75, 192, 0, 1)",
+            pointRadius: 8,
           },
           {
             label: "Qrad",
             data: hQradValues,
+            borderColor: "rgba(0, 192, 192, 1)",
             backgroundColor: "rgba(0, 192, 192, 1)",
+            pointRadius: 8,
           },
         ],
       });
@@ -72,12 +77,16 @@ export const QconvQrad = () => {
           {
             label: "Qconv",
             data: eQconvValues,
-            backgroundColor: "rgba(75, 192, 192, 1)",
+            borderColor: "rgba(75, 192, 0, 1)",
+            backgroundColor: "rgba(75, 192, 0, 1)",
+            pointRadius: 8,
           },
           {
             label: "Qrad",
             data: eQradValues,
-            backgroundColor: "rgba(75, 192, 192, 1)",
+            borderColor: "rgba(0, 192, 192, 1)",
+            backgroundColor: "rgba(0, 192, 192, 1)",
+            pointRadius: 8,
           },
         ],
       });
