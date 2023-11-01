@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
 
-function App() {
+//Pages
+import { Home } from "./components/Pages/Home/Home";
+import { Header } from "./components/Organisms/Header";
+import { TsCharts } from "./components/Pages/TsCharts/TsCharts";
+import { QconvQrad } from "./components/Pages/QconvQrad.jsx/QconvQrad";
+
+const App = () => {
+  const [currentPage, setCurrentPage] = useState("home");
+
+  const changePage = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="app_container">
+        <Header />
+        <div className="tabs">
+          <button onClick={() => changePage("home")}>Home</button>
+          <button onClick={() => changePage("TsCharts")}>Ts Charts</button>
+          <button onClick={() => changePage("Qconv Qrad")}>Qconv Qrad</button>
+        </div>
+
+        <main>
+          {currentPage === "home" && <Home />}
+          {currentPage === "TsCharts" && <TsCharts />}
+          {currentPage === "Qconv Qrad" && <QconvQrad />}
+        </main>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

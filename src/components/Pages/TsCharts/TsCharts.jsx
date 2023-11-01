@@ -1,0 +1,116 @@
+import "./TsCharts.css";
+import React, { useEffect, useState } from "react";
+import { TsChartForm } from "../../Molecules/TsChartsForm/TsChartForm";
+import { initChartData } from "../../scripts/InitLineChart";
+import { LineChart } from "../../Atoms/LineChart/LineChart";
+import { Ts } from "../../scripts/SurfaceTemp";
+
+export const TsCharts = () => {
+  const [carcasa, setCarcasa] = useState({
+    inputPower: 150.0,
+    h: 10,
+    E: 0.1,
+    As: 0.54,
+    Talr: 30.0,
+    Tinf: 30.0,
+    n: 0.93,
+  });
+  const [hChart, setHChart] = useState(initChartData);
+  const [eChart, setEChart] = useState(initChartData);
+
+  //hChart
+  useEffect(() => {
+    try {
+      console.log(carcasa);
+      const { inputPower, E, As, Tinf, n } = carcasa;
+
+      const xValues = [];
+      const yValues = [];
+
+      for (let x = 10; x <= 200; x += 10) {
+        xValues.push(x);
+        yValues.push(Ts(inputPower, x, E, As, Tinf, n));
+      }
+
+      setHChart({
+        labels: xValues,
+        datasets: [
+          {
+            label: "Surface temperature",
+            data: yValues,
+            backgroundColor: "rgba(75, 192, 192, 1)",
+          },
+        ],
+      });
+    } catch {
+      alert("Valores no encontrados");
+    }
+  }, [carcasa]);
+
+  useEffect(() => {
+    try {
+      const { inputPower, h, As, Tinf, n } = carcasa;
+
+      const xValues = [];
+      const yValues = [];
+
+      for (let x = 0.05; x <= 1; x += 0.05) {
+        xValues.push(x);
+        yValues.push(Ts(inputPower, h, x, As, Tinf, n));
+      }
+
+      setEChart({
+        labels: xValues,
+        datasets: [
+          {
+            label: "Surface temperature",
+            data: yValues,
+            backgroundColor: "rgba(75, 192, 192, 1)",
+          },
+        ],
+      });
+    } catch {
+      alert("Valores no encontrados");
+    }
+  }, [carcasa]);
+
+  return (
+    <div className="TsChart_container">
+      <h2>
+        Gráfica de 𝑻<sub>𝒔</sub> en función de 𝒉 y 𝜺:
+      </h2>
+      <TsChartForm
+        /* values */
+        inputPowerValue={carcasa.inputPower}
+        watts={carcasa.inputPower * 745.7}
+        hValue={carcasa.h}
+        emissivityValue={carcasa.E}
+        surfaceAreaValue={carcasa.As}
+        tInfiniteValue={carcasa.Tinf}
+        TinfK={carcasa.Tinf + 273.15}
+        efficiencyValue={carcasa.n}
+        /*Accitions */
+        inputPowerChange={(e) => {
+          setCarcasa({ ...carcasa, inputPower: parseFloat(e.target.value) });
+        }}
+        hChange={(e) => {
+          setCarcasa({ ...carcasa, h: parseFloat(e.target.value) });
+        }}
+        emissivityChange={(e) => {
+          setCarcasa({ ...carcasa, E: parseFloat(e.target.value) });
+        }}
+        surfaceAreaChange={(e) => {
+          setCarcasa({ ...carcasa, As: parseFloat(e.target.value) });
+        }}
+        tInfiniteChange={(e) => {
+          setCarcasa({ ...carcasa, Tinf: parseFloat(e.target.value) });
+        }}
+        efficiencyChange={(e) => {
+          setCarcasa({ ...carcasa, n: parseFloat(e.target.value) });
+        }}
+      />
+      <LineChart data={hChart} chartTitle={"Ts vs h"} />
+      <LineChart data={eChart} chartTitle={"Ts vs E"} />
+    </div>
+  );
+};
