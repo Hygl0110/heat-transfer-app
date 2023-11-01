@@ -36,7 +36,7 @@ export const TsCharts = () => {
         labels: xValues,
         datasets: [
           {
-            label: "Surface temperature",
+            label: " Surface temperature ",
             data: yValues,
             borderColor: "rgba(75, 192, 192, 1)",
             backgroundColor: "rgba(75, 192, 192, 1)",
@@ -65,7 +65,7 @@ export const TsCharts = () => {
         labels: xValues,
         datasets: [
           {
-            label: "Surface temperature",
+            label: " Surface temperature ",
             data: yValues,
             borderColor: "rgba(75, 192, 192, 1)",
             backgroundColor: "rgba(75, 192, 192, 1)",

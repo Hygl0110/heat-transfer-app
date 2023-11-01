@@ -55,14 +55,14 @@ export const QconvQrad = () => {
         labels: hValues,
         datasets: [
           {
-            label: "Qconv",
+            label: " Qconv ",
             data: hQconvValues,
             borderColor: "rgba(75, 192, 0, 1)",
             backgroundColor: "rgba(75, 192, 0, 1)",
             pointRadius: 8,
           },
           {
-            label: "Qrad",
+            label: " Qrad ",
             data: hQradValues,
             borderColor: "rgba(0, 192, 192, 1)",
             backgroundColor: "rgba(0, 192, 192, 1)",
@@ -75,14 +75,14 @@ export const QconvQrad = () => {
         labels: eValues,
         datasets: [
           {
-            label: "Qconv",
+            label: " Qconv ",
             data: eQconvValues,
             borderColor: "rgba(75, 192, 0, 1)",
             backgroundColor: "rgba(75, 192, 0, 1)",
             pointRadius: 8,
           },
           {
-            label: "Qrad",
+            label: " Qrad ",
             data: eQradValues,
             borderColor: "rgba(0, 192, 192, 1)",
             backgroundColor: "rgba(0, 192, 192, 1)",
