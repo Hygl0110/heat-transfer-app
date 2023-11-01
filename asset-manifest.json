@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/heat-transfer-app/static/css/main.d337f483.css",
+    "main.js": "/heat-transfer-app/static/js/main.a60d6fed.js",
+    "static/js/787.0394f16b.chunk.js": "/heat-transfer-app/static/js/787.0394f16b.chunk.js",
+    "static/media/dibujito.jpg": "/heat-transfer-app/static/media/dibujito.90cd17cc44f064bbc2e4.jpg",
+    "index.html": "/heat-transfer-app/index.html",
+    "main.d337f483.css.map": "/heat-transfer-app/static/css/main.d337f483.css.map",
+    "main.a60d6fed.js.map": "/heat-transfer-app/static/js/main.a60d6fed.js.map",
+    "787.0394f16b.chunk.js.map": "/heat-transfer-app/static/js/787.0394f16b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d337f483.css",
+    "static/js/main.a60d6fed.js"
+  ]
+}
