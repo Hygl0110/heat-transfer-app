@@ -32,7 +32,7 @@ export const LineChart = (props) => {
         position: "top",
         labels: {
           font: {
-            size: 16, // Tamaño de fuente para la leyenda
+            /* size: 16, // Tamaño de fuente para la leyenda */
           },
         },
       },
@@ -40,16 +40,16 @@ export const LineChart = (props) => {
         display: true,
         text: chartTitle,
         font: {
-          size: 30, // Tamaño de fuente para el título
+          /* size: 30, // Tamaño de fuente para el título */
         },
       },
       tooltip: {
         enabled: true,
         bodyFont: {
-          size: 30, // Tamaño de fuente para el cuerpo del tooltip
+          /* size: 30, // Tamaño de fuente para el cuerpo del tooltip */
         },
         titleFont: {
-          size: 30, // Tamaño de fuente para el título del tooltip
+          /* size: 30, // Tamaño de fuente para el título del tooltip */
         },
       },
     },

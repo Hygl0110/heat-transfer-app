@@ -59,14 +59,12 @@ export const QconvQrad = () => {
             data: hQconvValues,
             borderColor: "rgba(75, 192, 0, 1)",
             backgroundColor: "rgba(75, 192, 0, 1)",
-            pointRadius: 8,
           },
           {
             label: " Qrad ",
             data: hQradValues,
             borderColor: "rgba(0, 192, 192, 1)",
             backgroundColor: "rgba(0, 192, 192, 1)",
-            pointRadius: 8,
           },
         ],
       });
@@ -79,14 +77,12 @@ export const QconvQrad = () => {
             data: eQconvValues,
             borderColor: "rgba(75, 192, 0, 1)",
             backgroundColor: "rgba(75, 192, 0, 1)",
-            pointRadius: 8,
           },
           {
             label: " Qrad ",
             data: eQradValues,
             borderColor: "rgba(0, 192, 192, 1)",
             backgroundColor: "rgba(0, 192, 192, 1)",
-            pointRadius: 8,
           },
         ],
       });
