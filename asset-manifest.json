@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/heat-transfer-app/static/css/main.1571e79a.css",
-    "main.js": "/heat-transfer-app/static/js/main.d8f778bc.js",
+    "main.css": "/heat-transfer-app/static/css/main.bbfc80ae.css",
+    "main.js": "/heat-transfer-app/static/js/main.c80b79fb.js",
     "static/js/787.0394f16b.chunk.js": "/heat-transfer-app/static/js/787.0394f16b.chunk.js",
-    "static/media/dibujito.jpg": "/heat-transfer-app/static/media/dibujito.90cd17cc44f064bbc2e4.jpg",
+    "static/media/dibujito.jpg": "/heat-transfer-app/static/media/dibujito.6f077ca83fe50f7ceeb1.jpg",
     "index.html": "/heat-transfer-app/index.html",
-    "main.1571e79a.css.map": "/heat-transfer-app/static/css/main.1571e79a.css.map",
-    "main.d8f778bc.js.map": "/heat-transfer-app/static/js/main.d8f778bc.js.map",
+    "main.bbfc80ae.css.map": "/heat-transfer-app/static/css/main.bbfc80ae.css.map",
+    "main.c80b79fb.js.map": "/heat-transfer-app/static/js/main.c80b79fb.js.map",
     "787.0394f16b.chunk.js.map": "/heat-transfer-app/static/js/787.0394f16b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1571e79a.css",
-    "static/js/main.d8f778bc.js"
+    "static/css/main.bbfc80ae.css",
+    "static/js/main.c80b79fb.js"
   ]
 }
