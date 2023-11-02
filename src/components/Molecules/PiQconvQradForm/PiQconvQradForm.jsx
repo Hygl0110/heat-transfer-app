@@ -1,6 +1,8 @@
-export const TsChartForm = (props) => {
+import React from "react";
+
+export const PiQconvQradForm = (props) => {
   return (
-    <div className="TsChartForm_container">
+    <div className="PiQconvQradForm_container">
       <form onSubmit={(e) => e.preventDefault()}>
         {/*Form*/}
         <>
@@ -72,6 +74,21 @@ export const TsChartForm = (props) => {
             onChange={props.tInfiniteChange}
           />
           <p>: {props.TinfK} K</p>
+        </>
+
+        <>
+          <label>
+            T<sub>surroundings</sub> (°C):
+          </label>
+          <input
+            name="Talr"
+            min={0.1}
+            step={0.1}
+            type="number"
+            value={props.tSurroundingsValue}
+            onChange={props.tSurroundingsChange}
+          />
+          <p>: {props.TalrK} K</p>
         </>
 
         <>

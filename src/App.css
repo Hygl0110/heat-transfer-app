@@ -15,6 +15,14 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.page_container {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -50,4 +58,19 @@ input {
 
 p {
   margin-top: 0;
+}
+
+.dibujo {
+  display: block;
+  margin: 0px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

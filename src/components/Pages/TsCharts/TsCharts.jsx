@@ -1,5 +1,4 @@
-import "./TsCharts.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { TsChartForm } from "../../Molecules/TsChartsForm/TsChartForm";
 import { initChartData } from "../../scripts/InitLineChart";
 import { LineChart } from "../../Atoms/LineChart/LineChart";
@@ -80,38 +79,46 @@ export const TsCharts = () => {
   }
 
   return (
-    <div className="TsChart_container">
-      <h2>
-        Line plot of 𝑻<sub>𝒔</sub> in function of 𝒉 y 𝜺:
-      </h2>
-      <TsChartForm
-        /* values */
-        inputPowerValue={carcasa.inputPower}
-        watts={carcasa.inputPower * 745.7}
-        hValue={carcasa.h}
-        emissivityValue={carcasa.E}
-        surfaceAreaValue={carcasa.As}
-        tInfiniteValue={carcasa.Tinf}
-        TinfK={carcasa.Tinf + 273.15}
-        efficiencyValue={carcasa.n}
-        /*Accitions */
-        inputPowerChange={handleFormChange}
-        hChange={handleFormChange}
-        emissivityChange={handleFormChange}
-        surfaceAreaChange={handleFormChange}
-        tInfiniteChange={handleFormChange}
-        efficiencyChange={handleFormChange}
-      />
-      <LineChart
-        data={hChart}
-        chartTitle={"Ts vs h"}
-        xLavelTitle={"h variable"}
-      />
-      <LineChart
-        data={eChart}
-        chartTitle={"Ts vs E"}
-        xLavelTitle={"𝜺 variable"}
-      />
+    <div className="page_container">
+      <>
+        <h2>
+          Graphics of T<sub>s</sub> in function of h and 𝜺 :
+        </h2>
+      </>
+
+      <>
+        <TsChartForm
+          /* values */
+          inputPowerValue={carcasa.inputPower}
+          watts={carcasa.inputPower * 745.7}
+          hValue={carcasa.h}
+          emissivityValue={carcasa.E}
+          surfaceAreaValue={carcasa.As}
+          tInfiniteValue={carcasa.Tinf}
+          TinfK={carcasa.Tinf + 273.15}
+          efficiencyValue={carcasa.n}
+          /*Accitions */
+          inputPowerChange={handleFormChange}
+          hChange={handleFormChange}
+          emissivityChange={handleFormChange}
+          surfaceAreaChange={handleFormChange}
+          tInfiniteChange={handleFormChange}
+          efficiencyChange={handleFormChange}
+        />
+      </>
+
+      <>
+        <LineChart
+          data={hChart}
+          chartTitle={"Ts vs h"}
+          xLavelTitle={"h variable"}
+        />
+        <LineChart
+          data={eChart}
+          chartTitle={"Ts vs E"}
+          xLavelTitle={"𝜺 variable"}
+        />
+      </>
     </div>
   );
 };

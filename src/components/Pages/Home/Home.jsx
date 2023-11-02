@@ -1,21 +1,20 @@
-import "./Home.css";
 import dibujito from "../../../img/dibujito.jpg";
 
 export const Home = () => {
   return (
-    <div className="home">
+    <div className="page_container">
       <h1>Application for heat transfer.</h1>
       <h3>WORK DESCRIPTION</h3>
       <p>
-        The transmission housing side of a vehicle measures 𝑊 = 0.30 m and
-        receives an input power of 𝑃𝑖= 150 hp from the engine. Measurements
-        indicate that the transmission efficiency is 𝜂 = 0.93, the temperature
-        of the air flow over the casing is 𝑇<sub>∞</sub>= 30°C and the
-        convection heat transfer coefficient is ℎ W/m<sup>2</sup>K The
+        The transmission housing side of a vehicle measures W = 0.30 m and
+        receives an input power of P<sub>i</sub> = 150 hp from the engine.
+        Measurements indicate that the transmission efficiency is 𝜂 = 0.93, the
+        temperature of the air flow over the casing is T<sub>∞</sub>= 30°C and
+        the convection heat transfer coefficient is h W/m<sup>2</sup>K The
         emissivity of the shell material is 𝜀. Suppose the soil and Chassis can
         be approximated as a large surface area surrounding the casing for the
-        exchange of radiation at a temperature of 𝑇<sub>surrounding</sub> = 30°C
-        and that the Transmission can be modeled as a cube with edge equal to 𝑊.
+        exchange of radiation at a temperature of T<sub>surroun</sub> = 30°C and
+        that the Transmission can be modeled as a cube with edge equal to W.
       </p>
       <h3>Base case values:</h3>
       <p>

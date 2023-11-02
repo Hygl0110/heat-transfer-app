@@ -1,5 +1,4 @@
-import "./QconvQrad.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { QconvQradForm } from "../../Molecules/QconvQradForm/QconvQradForm";
 import { LineChart } from "../../Atoms/LineChart/LineChart";
 import { initChartData } from "../../scripts/InitLineChart";
@@ -105,42 +104,50 @@ export const QconvQrad = () => {
   }
 
   return (
-    <div className="QconvQrad_container">
-      <h2>
-        Line plot of Q&#x0307;<sub>𝒄𝒐𝒏𝒗</sub> y Q&#x0307;<sub>𝒓𝒂𝒅</sub> in
-        function of 𝒉 y 𝜺:
-      </h2>
-      <QconvQradForm
-        /* values */
-        inputPowerValue={carcasa.inputPower}
-        watts={carcasa.inputPower * 745.7}
-        hValue={carcasa.h}
-        emissivityValue={carcasa.E}
-        surfaceAreaValue={carcasa.As}
-        tInfiniteValue={carcasa.Tinf}
-        TinfK={carcasa.Tinf + 273.15}
-        tSurroundingsValue={carcasa.Talr}
-        TalrK={carcasa.Talr + 273.15}
-        efficiencyValue={carcasa.n}
-        /*Accitions */
-        inputPowerChange={handleFormChange}
-        hChange={handleFormChange}
-        emissivityChange={handleFormChange}
-        surfaceAreaChange={handleFormChange}
-        tInfiniteChange={handleFormChange}
-        tSurroundingsChange={handleFormChange}
-        efficiencyChange={handleFormChange}
-      />
-      <LineChart
-        data={hChart}
-        chartTitle={"Qconv Qrad vs h"}
-        xLavelTitle={"h variable"}
-      />
-      <LineChart
-        data={eChart}
-        chartTitle={"Qconv Qrad vs E"}
-        xLavelTitle={"𝜺 variable"}
-      />
+    <div className="page_container">
+      <>
+        <h2>
+          Graphics of Q&#x0307;<sub>conv</sub> and Q&#x0307;
+          <sub>rad</sub> in function of h and 𝜺 :
+        </h2>
+      </>
+
+      <>
+        <QconvQradForm
+          /* values */
+          inputPowerValue={carcasa.inputPower}
+          watts={carcasa.inputPower * 745.7}
+          hValue={carcasa.h}
+          emissivityValue={carcasa.E}
+          surfaceAreaValue={carcasa.As}
+          tInfiniteValue={carcasa.Tinf}
+          TinfK={carcasa.Tinf + 273.15}
+          tSurroundingsValue={carcasa.Talr}
+          TalrK={carcasa.Talr + 273.15}
+          efficiencyValue={carcasa.n}
+          /*Accitions */
+          inputPowerChange={handleFormChange}
+          hChange={handleFormChange}
+          emissivityChange={handleFormChange}
+          surfaceAreaChange={handleFormChange}
+          tInfiniteChange={handleFormChange}
+          tSurroundingsChange={handleFormChange}
+          efficiencyChange={handleFormChange}
+        />
+      </>
+
+      <>
+        <LineChart
+          data={hChart}
+          chartTitle={"Qconv Qrad vs h"}
+          xLavelTitle={"h variable"}
+        />
+        <LineChart
+          data={eChart}
+          chartTitle={"Qconv Qrad vs E"}
+          xLavelTitle={"𝜺 variable"}
+        />
+      </>
     </div>
   );
 };
