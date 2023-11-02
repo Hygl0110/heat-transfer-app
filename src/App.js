@@ -7,6 +7,7 @@ import { Header } from "./components/Organisms/Header";
 import { TsCharts } from "./components/Pages/TsCharts/TsCharts";
 import { QconvQrad } from "./components/Pages/QconvQrad/QconvQrad";
 import { PiQconvQrad } from "./components/Pages/PiQconvQrad/PiQconvQrad";
+import { Footer } from "./components/Organisms/Footer";
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
@@ -57,6 +58,8 @@ const App = () => {
           {currentPage === "Qconv Qrad" && <QconvQrad />}
           {currentPage === "Pi Qconv Qrad" && <PiQconvQrad />}
         </main>
+
+        <Footer />
       </div>
     </div>
   );
