@@ -3,10 +3,6 @@ import React from "react";
 export const QconvQradForm = (props) => {
   return (
     <div className="TsChartForm_container">
-      <h2>
-        Gráfica de Q&#x0307;<sub>𝒄𝒐𝒏𝒗</sub> y Q&#x0307;<sub>𝒓𝒂𝒅</sub> en función
-        de 𝒉 y 𝜺:
-      </h2>
       <form className="TsForm" action="" onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="">Input power (hp): </label>
         <input
@@ -82,7 +78,7 @@ export const QconvQradForm = (props) => {
         />
         <p>: {props.TalrK} K</p>
 
-        <label htmlFor="">Efficiency (dimensionless): </label>
+        <label htmlFor="">𝜂 (dimensionless): </label>
         <input
           max={1}
           min={0.01}

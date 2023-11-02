@@ -63,7 +63,7 @@ export const TsChartForm = (props) => {
         />
         <p>: {props.TinfK} K</p>
 
-        <label htmlFor="">Efficiency (dimensionless): </label>
+        <label htmlFor="">𝜂 (dimensionless): </label>
         <input
           max={1}
           min={0.01}

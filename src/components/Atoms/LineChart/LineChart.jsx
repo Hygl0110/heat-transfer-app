@@ -65,7 +65,7 @@ export const LineChart = (props) => {
 
   return (
     <div className="line_container">
-      <Line data={props.data} options={options} />
+      <Line className="line" data={props.data} options={options} />
     </div>
   );
 };

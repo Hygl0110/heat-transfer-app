@@ -4,19 +4,12 @@ import { QconvQradForm } from "../../Molecules/QconvQradForm/QconvQradForm";
 import { LineChart } from "../../Atoms/LineChart/LineChart";
 import { initChartData } from "../../scripts/InitLineChart";
 import { Qconv, Qrad, Ts } from "../../scripts/SurfaceTemp";
+import { initValues } from "../../scripts/initValues";
 
 export const QconvQrad = () => {
   const [hChart, setHChart] = useState(initChartData);
   const [eChart, setEChart] = useState(initChartData);
-  const [carcasa, setCarcasa] = useState({
-    inputPower: 150.0,
-    h: 10,
-    E: 0.1,
-    As: 0.54,
-    Talr: 30.0,
-    Tinf: 30.0,
-    n: 0.93,
-  });
+  const [carcasa, setCarcasa] = useState(initValues);
 
   //hChart
   useEffect(() => {
@@ -38,17 +31,20 @@ export const QconvQrad = () => {
       for (let hQ = 10; hQ <= 200; hQ += 10) {
         hValues.push(hQ);
         hQconvValues.push(
-          Qconv(h, As, Tinf, Ts(inputPower, hQ, E, As, Tinf, n))
+          Qconv(hQ, As, Tinf, Ts(inputPower, hQ, E, As, Tinf, n))
         );
         hQradValues.push(Qrad(E, As, Ts(inputPower, hQ, E, As, Tinf, n), Talr));
       }
       //e values
       for (let eQ = 0.05; eQ <= 1; eQ += 0.05) {
+        eQ = parseFloat(eQ.toFixed(2));
         eValues.push(eQ);
         eQconvValues.push(
           Qconv(h, As, Tinf, Ts(inputPower, h, eQ, As, Tinf, n))
         );
-        eQradValues.push(Qrad(E, As, Ts(inputPower, h, eQ, As, Tinf, n), Talr));
+        eQradValues.push(
+          Qrad(eQ, As, Ts(inputPower, h, eQ, As, Tinf, n), Talr)
+        );
       }
 
       setHChart({
@@ -93,6 +89,10 @@ export const QconvQrad = () => {
 
   return (
     <div className="QconvQrad_container">
+      <h2>
+        Line plot of Q&#x0307;<sub>𝒄𝒐𝒏𝒗</sub> y Q&#x0307;<sub>𝒓𝒂𝒅</sub> in
+        function of 𝒉 y 𝜺:
+      </h2>
       <QconvQradForm
         /* values */
         inputPowerValue={carcasa.inputPower}

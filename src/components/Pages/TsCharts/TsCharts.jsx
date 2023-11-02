@@ -4,17 +4,10 @@ import { TsChartForm } from "../../Molecules/TsChartsForm/TsChartForm";
 import { initChartData } from "../../scripts/InitLineChart";
 import { LineChart } from "../../Atoms/LineChart/LineChart";
 import { Ts } from "../../scripts/SurfaceTemp";
+import { initValues } from "../../scripts/initValues";
 
 export const TsCharts = () => {
-  const [carcasa, setCarcasa] = useState({
-    inputPower: 150.0,
-    h: 10,
-    E: 0.1,
-    As: 0.54,
-    Talr: 30.0,
-    Tinf: 30.0,
-    n: 0.93,
-  });
+  const [carcasa, setCarcasa] = useState(initValues);
   const [hChart, setHChart] = useState(initChartData);
   const [eChart, setEChart] = useState(initChartData);
 
@@ -56,6 +49,7 @@ export const TsCharts = () => {
       const yValues = [];
 
       for (let x = 0.05; x <= 1; x += 0.05) {
+        x = parseFloat(x.toFixed(2));
         xValues.push(x);
         yValues.push(Ts(inputPower, h, x, As, Tinf, n));
       }
@@ -79,7 +73,7 @@ export const TsCharts = () => {
   return (
     <div className="TsChart_container">
       <h2>
-        Gráfica de 𝑻<sub>𝒔</sub> en función de 𝒉 y 𝜺:
+        Line plot of 𝑻<sub>𝒔</sub> in function of 𝒉 y 𝜺:
       </h2>
       <TsChartForm
         /* values */
