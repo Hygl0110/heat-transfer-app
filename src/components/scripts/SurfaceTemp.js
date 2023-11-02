@@ -31,6 +31,11 @@ export const Qrad = (E, As, Ts, Talr) => {
   return E * v * As * Math.abs(Math.pow(Ts, 4) - Math.pow(Talr, 4));
 };
 
+//(1-n)Pi
+export const Pi = (n, Pin) => {
+  return (1 - n) * Pin;
+};
+
 //Metodo Numerico Newton-Raphson
 function findRoots(coefficients, p0, tolerance, maxIterations) {
   const n = coefficients.length;

@@ -11,64 +11,73 @@ export const TsCharts = () => {
   const [hChart, setHChart] = useState(initChartData);
   const [eChart, setEChart] = useState(initChartData);
 
-  //hChart
-  useEffect(() => {
+  //Dinamic Form
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
     try {
+      setCarcasa({ ...carcasa, [name]: parseFloat(value) });
+    } catch {
+      console.log("El valor es NaN");
+    }
+  };
+
+  //Dynamic Data Sets aun Dynamic Plost
+  try {
+    useEffect(() => {
       console.log(carcasa);
-      const { inputPower, E, As, Tinf, n } = carcasa;
 
-      const xValues = [];
-      const yValues = [];
+      const { inputPower, h, E, As, Tinf, n } = carcasa;
 
-      for (let x = 10; x <= 200; x += 10) {
-        xValues.push(x);
-        yValues.push(Ts(inputPower, x, E, As, Tinf, n));
+      //Ts vs h
+      const hValues = [];
+      const TshValues = [];
+      //array de datos
+      for (let h = 10; h <= 200; h += 10) {
+        hValues.push(h);
+        TshValues.push(Ts(inputPower, h, E, As, Tinf, n));
       }
-
-      setHChart({
-        labels: xValues,
+      //nuevo objeto tabla de datos Data para el grafico
+      const newHChart = {
+        labels: hValues,
         datasets: [
           {
-            label: " Surface temperature ",
-            data: yValues,
+            label: " Ts ",
+            data: TshValues,
             borderColor: "rgba(75, 192, 192, 1)",
             backgroundColor: "rgba(75, 192, 192, 1)",
           },
         ],
-      });
-    } catch {
-      alert("Valores no encontrados");
-    }
-  }, [carcasa]);
+      };
 
-  useEffect(() => {
-    try {
-      const { inputPower, h, As, Tinf, n } = carcasa;
-
-      const xValues = [];
-      const yValues = [];
-
-      for (let x = 0.05; x <= 1; x += 0.05) {
-        x = parseFloat(x.toFixed(2));
-        xValues.push(x);
-        yValues.push(Ts(inputPower, h, x, As, Tinf, n));
+      //Ts vs E
+      const eValues = [];
+      const TseValues = [];
+      //array de datos
+      for (let e = 0.05; e <= 1; e += 0.05) {
+        e = parseFloat(e.toFixed(2));
+        eValues.push(e);
+        TseValues.push(Ts(inputPower, h, e, As, Tinf, n));
       }
-
-      setEChart({
-        labels: xValues,
+      //nuevo objeto tabla de datos
+      const newEChart = {
+        labels: eValues,
         datasets: [
           {
             label: " Surface temperature ",
-            data: yValues,
+            data: TseValues,
             borderColor: "rgba(75, 192, 192, 1)",
             backgroundColor: "rgba(75, 192, 192, 1)",
           },
         ],
-      });
-    } catch {
-      alert("Valores no encontrados");
-    }
-  }, [carcasa]);
+      };
+
+      //Set de las tablas con los nuevos valores
+      setHChart(newHChart);
+      setEChart(newEChart);
+    }, [carcasa]);
+  } catch {
+    alert("Valores no encontrados");
+  }
 
   return (
     <div className="TsChart_container">
@@ -86,27 +95,23 @@ export const TsCharts = () => {
         TinfK={carcasa.Tinf + 273.15}
         efficiencyValue={carcasa.n}
         /*Accitions */
-        inputPowerChange={(e) => {
-          setCarcasa({ ...carcasa, inputPower: parseFloat(e.target.value) });
-        }}
-        hChange={(e) => {
-          setCarcasa({ ...carcasa, h: parseFloat(e.target.value) });
-        }}
-        emissivityChange={(e) => {
-          setCarcasa({ ...carcasa, E: parseFloat(e.target.value) });
-        }}
-        surfaceAreaChange={(e) => {
-          setCarcasa({ ...carcasa, As: parseFloat(e.target.value) });
-        }}
-        tInfiniteChange={(e) => {
-          setCarcasa({ ...carcasa, Tinf: parseFloat(e.target.value) });
-        }}
-        efficiencyChange={(e) => {
-          setCarcasa({ ...carcasa, n: parseFloat(e.target.value) });
-        }}
+        inputPowerChange={handleFormChange}
+        hChange={handleFormChange}
+        emissivityChange={handleFormChange}
+        surfaceAreaChange={handleFormChange}
+        tInfiniteChange={handleFormChange}
+        efficiencyChange={handleFormChange}
       />
-      <LineChart data={hChart} chartTitle={"Ts vs h"} />
-      <LineChart data={eChart} chartTitle={"Ts vs E"} />
+      <LineChart
+        data={hChart}
+        chartTitle={"Ts vs h"}
+        xLavelTitle={"h variable"}
+      />
+      <LineChart
+        data={eChart}
+        chartTitle={"Ts vs E"}
+        xLavelTitle={"𝜺 variable"}
+      />
     </div>
   );
 };

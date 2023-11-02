@@ -14,22 +14,20 @@ export const Home = () => {
         convection heat transfer coefficient is ℎ W/m<sup>2</sup>K The
         emissivity of the shell material is 𝜀. Suppose the soil and Chassis can
         be approximated as a large surface area surrounding the casing for the
-        exchange of radiation at a temperature of 𝑇<sub>𝑎𝑙𝑟𝑒𝑑</sub> = 30°C and
-        that the Transmission can be modeled as a cube with edge equal to 𝑊.
+        exchange of radiation at a temperature of 𝑇<sub>surrounding</sub> = 30°C
+        and that the Transmission can be modeled as a cube with edge equal to 𝑊.
       </p>
+      <h3>Base case values:</h3>
       <p>
-        <h4>Initial Values</h4>
-        Específicamente, calcule y dibuje las gráficas de las variables
-        dependientes anteriores para variaciones paramétricas en las variables
-        independientes, considerando los valores de ℎ = 200 W/m2.K y 𝜀 = 0.8
-        para el caso base. Los intervalos sugeridos de las variables
-        independientes son:
+        Specifically, calculate and plot the graphs of the dependent variables
+        for parametric variations in the independent variables, considering the
+        values of h = 200 W/m²·K and ε = 0.8 for the base case. The suggested
+        intervals for the independent variables are as follows: <br />
+        <br /> Heat transfer coefficient by convection: <br /> 10 ≤ h ≤ 200
+        W/m²·K <br /> with a variation step of 10 W/m²·K. <br />
         <br />
-        Coeficiente de transferencia de calor por convección: 10 ≤ ℎ ≤ 200
-        W/m2.K Con paso de variación igual a 10 W/m2 .K.
-        <br />
-        Emisividad de la superficie del panel: 0.05 ≤ 𝜀 ≤ 1 Con paso de
-        variación igual a 0.05.
+        Surface emissivity of the panel: 0.05 ≤ ε ≤ 1 <br /> with a variation
+        step of 0.05.
       </p>
       <br />
       <br />

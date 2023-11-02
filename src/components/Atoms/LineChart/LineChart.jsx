@@ -13,6 +13,7 @@ import {
 
 export const LineChart = (props) => {
   const chartTitle = props.chartTitle;
+  const xLavelTitle = props.xLavelTitle;
 
   ChartJS.register(
     CategoryScale,
@@ -32,7 +33,7 @@ export const LineChart = (props) => {
         position: "top",
         labels: {
           font: {
-            /* size: 16, // Tamaño de fuente para la leyenda */
+            weight: "bold" /* size: 16, // Negrita para la leyenda */,
           },
         },
       },
@@ -40,7 +41,7 @@ export const LineChart = (props) => {
         display: true,
         text: chartTitle,
         font: {
-          /* size: 30, // Tamaño de fuente para el título */
+          weight: "bold", // Negrita para el título */
         },
       },
       tooltip: {
@@ -55,6 +56,11 @@ export const LineChart = (props) => {
     },
     scales: {
       x: {
+        title: {
+          display: true,
+          text: xLavelTitle,
+          weight: "bold",
+        },
         // Configuración del eje X
       },
       y: {

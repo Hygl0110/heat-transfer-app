@@ -7,27 +7,34 @@ import { Qconv, Qrad, Ts } from "../../scripts/SurfaceTemp";
 import { initValues } from "../../scripts/initValues";
 
 export const QconvQrad = () => {
+  //Valores iniciales
+  const [carcasa, setCarcasa] = useState(initValues);
   const [hChart, setHChart] = useState(initChartData);
   const [eChart, setEChart] = useState(initChartData);
-  const [carcasa, setCarcasa] = useState(initValues);
 
-  //hChart
-  useEffect(() => {
+  //Dinamic Form
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
     try {
+      setCarcasa({ ...carcasa, [name]: parseFloat(value) });
+    } catch {
+      console.log("El valor es NaN");
+    }
+  };
+
+  //Dinamic Data sets, and Dinamic Line PLOTS
+  try {
+    //hChart
+    useEffect(() => {
       console.log(carcasa);
+
       const { inputPower, h, E, As, Talr, Tinf, n } = carcasa;
 
       //Qconv Qrad vs h
       const hValues = [];
       const hQconvValues = [];
       const hQradValues = [];
-
-      //Qconv Qrad vs E
-      const eValues = [];
-      const eQconvValues = [];
-      const eQradValues = [];
-
-      //h values
+      //Array h for Q and hQconv, hQrad values
       for (let hQ = 10; hQ <= 200; hQ += 10) {
         hValues.push(hQ);
         hQconvValues.push(
@@ -35,19 +42,8 @@ export const QconvQrad = () => {
         );
         hQradValues.push(Qrad(E, As, Ts(inputPower, hQ, E, As, Tinf, n), Talr));
       }
-      //e values
-      for (let eQ = 0.05; eQ <= 1; eQ += 0.05) {
-        eQ = parseFloat(eQ.toFixed(2));
-        eValues.push(eQ);
-        eQconvValues.push(
-          Qconv(h, As, Tinf, Ts(inputPower, h, eQ, As, Tinf, n))
-        );
-        eQradValues.push(
-          Qrad(eQ, As, Ts(inputPower, h, eQ, As, Tinf, n), Talr)
-        );
-      }
-
-      setHChart({
+      //New hChartValues dataFrame
+      const newHCartValues = {
         labels: hValues,
         datasets: [
           {
@@ -63,9 +59,26 @@ export const QconvQrad = () => {
             backgroundColor: "rgba(0, 192, 192, 1)",
           },
         ],
-      });
+      };
 
-      setEChart({
+      //Qconv Qrad vs E
+      const eValues = [];
+      const eQconvValues = [];
+      const eQradValues = [];
+
+      //Array e for Q and eQconv, eQrad values
+      for (let eQ = 0.05; eQ <= 1; eQ += 0.05) {
+        eQ = parseFloat(eQ.toFixed(2));
+        eValues.push(eQ);
+        eQconvValues.push(
+          Qconv(h, As, Tinf, Ts(inputPower, h, eQ, As, Tinf, n))
+        );
+        eQradValues.push(
+          Qrad(eQ, As, Ts(inputPower, h, eQ, As, Tinf, n), Talr)
+        );
+      }
+
+      const newECartValues = {
         labels: eValues,
         datasets: [
           {
@@ -81,11 +94,15 @@ export const QconvQrad = () => {
             backgroundColor: "rgba(0, 192, 192, 1)",
           },
         ],
-      });
-    } catch {
-      alert("Valores no encontrados");
-    }
-  }, [carcasa]);
+      };
+
+      //Set chart values
+      setHChart(newHCartValues);
+      setEChart(newECartValues);
+    }, [carcasa]);
+  } catch {
+    console.log("Valores no encontrados");
+  }
 
   return (
     <div className="QconvQrad_container">
@@ -105,39 +122,25 @@ export const QconvQrad = () => {
         tSurroundingsValue={carcasa.Talr}
         TalrK={carcasa.Talr + 273.15}
         efficiencyValue={carcasa.n}
-        Tsc={Ts(
-          carcasa.inputPower,
-          carcasa.h,
-          carcasa.E,
-          carcasa.As,
-          carcasa.Tinf,
-          carcasa.n
-        ).toFixed(2)}
         /*Accitions */
-        inputPowerChange={(e) => {
-          setCarcasa({ ...carcasa, inputPower: parseFloat(e.target.value) });
-        }}
-        hChange={(e) => {
-          setCarcasa({ ...carcasa, h: parseFloat(e.target.value) });
-        }}
-        emissivityChange={(e) => {
-          setCarcasa({ ...carcasa, E: parseFloat(e.target.value) });
-        }}
-        surfaceAreaChange={(e) => {
-          setCarcasa({ ...carcasa, As: parseFloat(e.target.value) });
-        }}
-        tInfiniteChange={(e) => {
-          setCarcasa({ ...carcasa, Tinf: parseFloat(e.target.value) });
-        }}
-        tSurroundingsChange={(e) => {
-          setCarcasa({ ...carcasa, Talr: parseFloat(e.target.value) });
-        }}
-        efficiencyChange={(e) => {
-          setCarcasa({ ...carcasa, n: parseFloat(e.target.value) });
-        }}
+        inputPowerChange={handleFormChange}
+        hChange={handleFormChange}
+        emissivityChange={handleFormChange}
+        surfaceAreaChange={handleFormChange}
+        tInfiniteChange={handleFormChange}
+        tSurroundingsChange={handleFormChange}
+        efficiencyChange={handleFormChange}
       />
-      <LineChart data={hChart} chartTitle={"Qconv Qrad vs h"} />
-      <LineChart data={eChart} chartTitle={"Qconv Qrad vs E"} />
+      <LineChart
+        data={hChart}
+        chartTitle={"Qconv Qrad vs h"}
+        xLavelTitle={"h variable"}
+      />
+      <LineChart
+        data={eChart}
+        chartTitle={"Qconv Qrad vs E"}
+        xLavelTitle={"𝜺 variable"}
+      />
     </div>
   );
 };
