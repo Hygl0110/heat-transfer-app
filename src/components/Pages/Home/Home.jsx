@@ -13,8 +13,8 @@ export const Home = () => {
         the convection heat transfer coefficient is h W/m<sup>2</sup>K The
         emissivity of the shell material is 𝜀. Suppose the soil and Chassis can
         be approximated as a large surface area surrounding the casing for the
-        exchange of radiation at a temperature of T<sub>surroun</sub> = 30°C and
-        that the Transmission can be modeled as a cube with edge equal to W.
+        exchange of radiation at a temperature of T<sub>surrounding</sub> = 30°C
+        and that the Transmission can be modeled as a cube with edge equal to W.
       </p>
       <h3>Base case values:</h3>
       <p>

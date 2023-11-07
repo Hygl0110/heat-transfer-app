@@ -10,7 +10,7 @@ export const Footer = () => {
       <br />
       <label>Subjet:</label>
       <p>
-        Transferencia de calor <br />
+        Transferencia de Calor <br />
       </p>
       <label>Professor:</label> Gustavo Adolfo Patiño Jaramillo <br />
       <label>

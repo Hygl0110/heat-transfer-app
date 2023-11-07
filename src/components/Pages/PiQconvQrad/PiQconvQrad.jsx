@@ -65,8 +65,8 @@ export const PiQconvQrad = () => {
           {
             label: " Pi ",
             data: hPiValues,
-            borderColor: "rgba(72, 0, 192, 1)",
-            backgroundColor: "rgba(72, 0, 192, 1)",
+            borderColor: "rgba(192, 120, 192, 1)",
+            backgroundColor: "rgba(192, 120, 192, 1)",
           },
         ],
       };
@@ -111,8 +111,8 @@ export const PiQconvQrad = () => {
           {
             label: " (1-n)Pi ",
             data: ePiValues,
-            borderColor: "rgba(72, 0, 192, 1)",
-            backgroundColor: "rgba(72, 0, 192, 1)",
+            borderColor: "rgba(192, 120, 192, 1)",
+            backgroundColor: "rgba(192, 120, 192, 1)",
           },
         ],
       };

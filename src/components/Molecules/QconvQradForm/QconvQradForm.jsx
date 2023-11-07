@@ -78,7 +78,7 @@ export const QconvQradForm = (props) => {
 
         <>
           <label>
-            T<sub>surroundings</sub> (°C):
+            T<sub>surrounding</sub> (°C):
           </label>
           <input
             name="Talr"
