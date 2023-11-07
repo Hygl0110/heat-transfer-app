@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/heat-transfer-app/static/css/main.40d06042.css",
-    "main.js": "/heat-transfer-app/static/js/main.4ac84aad.js",
+    "main.js": "/heat-transfer-app/static/js/main.9b57cf39.js",
     "static/js/787.0394f16b.chunk.js": "/heat-transfer-app/static/js/787.0394f16b.chunk.js",
     "static/media/dibujito.jpg": "/heat-transfer-app/static/media/dibujito.b07ea9b08bd0e3ea0b58.jpg",
     "index.html": "/heat-transfer-app/index.html",
     "main.40d06042.css.map": "/heat-transfer-app/static/css/main.40d06042.css.map",
-    "main.4ac84aad.js.map": "/heat-transfer-app/static/js/main.4ac84aad.js.map",
+    "main.9b57cf39.js.map": "/heat-transfer-app/static/js/main.9b57cf39.js.map",
     "787.0394f16b.chunk.js.map": "/heat-transfer-app/static/js/787.0394f16b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.40d06042.css",
-    "static/js/main.4ac84aad.js"
+    "static/js/main.9b57cf39.js"
   ]
 }
