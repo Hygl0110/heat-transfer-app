@@ -31,6 +31,34 @@ export const Home = () => {
       <br />
       <br />
       <img className="dibujo" src={dibujito} alt="" />
+      <br />
+      <br />
+      <h3>Assumptions</h3>
+      <p>
+        To perform calculations, the following assumptions were taken into
+        account:
+      </p>
+      <ul>
+        <li>
+          <b>Steady state:</b> We assume that the engine and the environment are
+          in a steady state, which means there are no significant changes in
+          temperatures over time
+        </li>
+        <li>
+          <b>Uniform surface:</b> We assume that the engine's surface is uniform
+          in temperature and properties across its heat transfer area.
+        </li>
+        <li>
+          <b>Uniform ambient temperature:</b> We assume that the ambient
+          temperature (T<sub>surrounding</sub> and T<sub>∞</sub>) is
+          approximately constant over the heat transfer area.
+        </li>
+        <li>
+          <b>Steady-state radiation:</b> In the case of radiation, it is assumed
+          that thermal radiation is in a steady-state, which means there are no
+          significant changes in surface and ambient temperatures over time.
+        </li>
+      </ul>
     </div>
   );
 };

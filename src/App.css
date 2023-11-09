@@ -4,7 +4,7 @@
 }
 
 .app_container {
-  max-width: 1080px;
+  max-width: 980px;
   font-family: Arial, sans-serif;
   margin: 20px auto;
   padding: 20px;
@@ -45,6 +45,12 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 
 input {
