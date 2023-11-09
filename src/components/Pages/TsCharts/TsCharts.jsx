@@ -23,8 +23,6 @@ export const TsCharts = () => {
   //Dynamic Data Sets aun Dynamic Plost
   try {
     useEffect(() => {
-      console.log(carcasa);
-
       const { inputPower, h, E, As, Tinf, n } = carcasa;
 
       //Ts vs h

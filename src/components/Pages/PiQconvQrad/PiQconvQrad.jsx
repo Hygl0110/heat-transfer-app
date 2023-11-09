@@ -25,8 +25,6 @@ export const PiQconvQrad = () => {
   try {
     //hChart
     useEffect(() => {
-      console.log(carcasa);
-
       const { inputPower, h, E, As, Talr, Tinf, n } = carcasa;
 
       //Qconv Qrad vs h
