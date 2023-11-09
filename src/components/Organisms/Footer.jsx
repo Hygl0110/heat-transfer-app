@@ -1,3 +1,4 @@
+import logo from "../../img/logoITM.png";
 export const Footer = () => {
   return (
     <footer>
@@ -19,6 +20,8 @@ export const Footer = () => {
         Medellín <br />
         2023
       </label>
+      <br />
+      <img className="logo" src={logo} alt="" />
     </footer>
   );
 };
