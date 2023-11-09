@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/heat-transfer-app/static/css/main.ba214ddd.css",
-    "main.js": "/heat-transfer-app/static/js/main.caa4551f.js",
+    "main.css": "/heat-transfer-app/static/css/main.e60021eb.css",
+    "main.js": "/heat-transfer-app/static/js/main.5d6dce0c.js",
     "static/js/787.0394f16b.chunk.js": "/heat-transfer-app/static/js/787.0394f16b.chunk.js",
     "static/media/dibujito.jpg": "/heat-transfer-app/static/media/dibujito.b07ea9b08bd0e3ea0b58.jpg",
     "index.html": "/heat-transfer-app/index.html",
-    "main.ba214ddd.css.map": "/heat-transfer-app/static/css/main.ba214ddd.css.map",
-    "main.caa4551f.js.map": "/heat-transfer-app/static/js/main.caa4551f.js.map",
+    "main.e60021eb.css.map": "/heat-transfer-app/static/css/main.e60021eb.css.map",
+    "main.5d6dce0c.js.map": "/heat-transfer-app/static/js/main.5d6dce0c.js.map",
     "787.0394f16b.chunk.js.map": "/heat-transfer-app/static/js/787.0394f16b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba214ddd.css",
-    "static/js/main.caa4551f.js"
+    "static/css/main.e60021eb.css",
+    "static/js/main.5d6dce0c.js"
   ]
 }
