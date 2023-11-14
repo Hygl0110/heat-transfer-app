@@ -6,8 +6,9 @@ export const PiQconvQradForm = (props) => {
       <form onSubmit={(e) => e.preventDefault()}>
         {/*Form*/}
         <>
-          <label>Input power (hp):</label>
+          <label htmlFor="inputPower">Input power (hp):</label>
           <input
+            id="inputPower"
             name="inputPower"
             min={0.1}
             step={0.1}
