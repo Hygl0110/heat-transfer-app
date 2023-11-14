@@ -21,6 +21,7 @@ const App = () => {
     <div className="app">
       <div className="app_container">
         <Header />
+
         <div className="tabs">
           <>
             <button onClick={() => changePage("home")}>
@@ -57,6 +58,7 @@ const App = () => {
         </div>
 
         <main>
+          {/* paginas */}
           {currentPage === "home" && <Home />}
           {currentPage === "TsCharts" && <TsCharts />}
           {currentPage === "Qconv Qrad" && <QconvQrad />}
